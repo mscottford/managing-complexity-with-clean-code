@@ -7,7 +7,17 @@ The `commandline` directory is used for a live demo of the Read by Refactoring t
 1. Open the project
 2. Run the tests with coverage
 3. Open `TokenPartitioner.cs`
-4. Start refactoring `PartitionTokensByType`
+4. Confirm that "Auto Test" is configured correctly and working
+   1. Save needs to trigger a test run
+   2. Save needs to trigger building relevant projects
+5. Start refactoring `PartitionTokensByType`
+   1. Extract method with entire contents, name it `Run`.
+   2. Create an inner class named `TokenHandler`
+   3. Move `Run` into `TokenHandler`
+   4. Change `Run` from `static` to instance method
+   5. Change call of `Run` to `new TokenHandler().Run`
+   6. Promote local variables in `Run` to fields in `TokenHandler`
+   7. Start extract methods from `Run`
 
 ## Project Background and Source
 
