@@ -4,7 +4,7 @@
 
 Our goal for this exercise is to practice the Read by Refactoring technique on some real-world code.
 
-The code that you'll be working with can be found in the `src/dateutil/rrule.py` file, specifically the constructor(`__init__`) for the `rrule` class, which starts on line `305`.
+The code that you'll be working with can be found in the `dateutil/src/dateutil/rrule.py` file, specifically the constructor(`__init__`) for the `rrule` class, which starts on line `305`.
 
 The constructor for `rrule` has a rather high complexity, regardless of which measure is used. Follow the Read by Refactoring technique to gain an understanding about what the method is doing, how it is doing, and reduce the complexity as you go.
 
@@ -27,7 +27,7 @@ Keep in mind that you should:
    3. Run `pyenv install 3.11.4`
       1. This may take a few minutes, depending on your computer.
 3. Launch PyCharm Community Edition.
-4. Open this folder as a project.
+4. Open the `dateutil` directory as a project.
    1. If you're asked whether or not you trust the author of the project, you'll need to click "Trust Project" to proceed with the exercise.
    2. If you are prompted to create a virtual environment, click "Cancel". We'll set that up in the next step.
 5. Prep the development environment
@@ -41,10 +41,11 @@ Keep in mind that you should:
    6. Click on "View" -> "Tools" -> "Terminal" to load the terminal window within PyCharm
    7. From within the terminal window, do the following:
       1. Run `which python` to confirm that `python` is being used from the `venv` directory. If it's not, then the "Virtual Environment" setup above didn't work. Go back to that step and try again before continuing.
-      2. Run `pip install -U tox six`
+      2. Run `pwd` to confirm that you're in the `dateutil` directory. The following commands won't work if you're in a different directory.
+      3. Run `pip install -U tox six`
           1. You may see a message about the version of `pip` being out-of-date. You can safely ignore that.
-      3. Run `python updatezinfo.py`. This creates a timezone data file that is required for the test to run correctly.
-      4. Run `pip install -r requirements-dev.txt`
+      4. Run `python updatezinfo.py`. This creates a timezone data file that is required for the test to run correctly.
+      5. Run `pip install -r requirements-dev.txt`
    8. In the "Project" sidebar:
        1. Right click on the `src` directory and select "Mark directory as" -> "Source Root"
        2. Right click on the `tests` directory and select "Mark directory as" -> "Test sources root"
@@ -54,12 +55,11 @@ Keep in mind that you should:
 
 ## Project Background and Source
 
-The code for this exercise is a slightly modified version of the [Python `dateutil` library](https://github.com/dateutil/dateutil), specifically the [`296d419fe6bf3b22897f8f210735ac9c4e1cb796`](https://github.com/dateutil/dateutil/tree/296d419fe6bf3b22897f8f210735ac9c4e1cb796) Git sha which was commited on June 6, 2023. This project's source code may look different since then. The project's original README file can be found at `ORIGINAL_README.rst`. It includes additional information about the library.
+The code for this exercise is a slightly modified version of the [Python `dateutil` library](https://github.com/dateutil/dateutil), specifically the [`296d419fe6bf3b22897f8f210735ac9c4e1cb796`](https://github.com/dateutil/dateutil/tree/296d419fe6bf3b22897f8f210735ac9c4e1cb796) Git SHA which was commited on June 6, 2023. This project's source code may look different since then. The project's original README file can be found at `dateutil/README.rst`. It includes additional information about the library.
 
 The following modifications have been made to the project to facilitate the purposes of this exercise:
 
-* `tox.ini` was modified to only reference Python 3.11.
-* `tests/property/test_tz_prop.py` was deleted, because it was failing for an unknown reason
-* This `README.md` file was added.
+* `dateutil/tox.ini` was modified to only reference Python 3.11.
+* `dateutil/tests/property/test_tz_prop.py` was deleted, because it was failing for an unknown reason
 
-The original `LICENSE` file has been included, and should be considered the licensce that this code is published under.
+The original `LICENSE` file has been preserved in the `dateutil` directory, and it should be considered the licensce that this code is published under.
