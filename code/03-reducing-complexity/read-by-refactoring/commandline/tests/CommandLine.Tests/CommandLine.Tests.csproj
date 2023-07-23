@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>net461;netcoreapp3.1</TargetFrameworks>
     <DefineConstants Condition="'$(BuildTarget)' != 'fsharp'">$(DefineConstants);SKIP_FSHARP</DefineConstants>
     <AssemblyOriginatorKeyFile>..\..\CommandLine.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
@@ -12,6 +11,8 @@
     <Version Condition="'$(VersionSuffix)' == ''">2.5.0</Version>
     <Copyright>Copyright (c) 2005 - 2018 Giacomo Stelluti Scala &amp; Contributors</Copyright>
 	<IsTestProject>true</IsTestProject>
+	<TargetFramework>net7.0</TargetFramework>
+	<LangVersion>default</LangVersion>
   </PropertyGroup>
   <ItemGroup Condition="'$(BuildTarget)' != 'fsharp'">
     <Compile Remove="Fakes\Options_With_FSharpOption.cs" />
