@@ -1,0 +1,43 @@
+
+#ignore build outputs
+[B|b]in
+[O|o]bj
+build/*
+
+#ignore managed external libs
+packages
+paket-files
+
+*.suo
+*.userprefs
+*~
+\#*\#
+*.pidb
+
+#ignore Test results/temps
+*.test-cache
+tests/CommandLine/test-results/*
+tests/CommandLine.Tests/test-results/*
+TestResult.xml
+
+*.DS_Store
+*.csproj.user
+*.nupkg
+*.old
+StyleCop.Cache
+.paket/paket.exe
+.fake
+*.cache
+docs/output/*
+artifacts/*
+*.xproj.user
+*.nuget.targets
+*.lock.json
+*.nuget.props
+*.DotSettings.user
+# Visual Studio 2015 cache/options directory
+.vs/
+# Rider
+.idea/
+
+[R|r]elease/** 

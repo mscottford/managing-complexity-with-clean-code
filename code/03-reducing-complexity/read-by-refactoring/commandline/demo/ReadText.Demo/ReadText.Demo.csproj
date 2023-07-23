@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net40;net45;net461;netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
+<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CommandLine\CommandLine.csproj" />
+  </ItemGroup>
+</Project>
