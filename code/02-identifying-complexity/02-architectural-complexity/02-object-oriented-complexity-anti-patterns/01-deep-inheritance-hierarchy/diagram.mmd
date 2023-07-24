@@ -1,0 +1,70 @@
+classDiagram
+    direction BT
+    class SpringApplicationAdminMXBeanRegistrar {
+    }
+    SpringApplicationAdminMXBeanRegistrar ..|> ApplicationContextAware
+    SpringApplicationAdminMXBeanRegistrar ..|> GenericApplicationListener
+    SpringApplicationAdminMXBeanRegistrar ..|> EnvironmentAware 
+    SpringApplicationAdminMXBeanRegistrar ..|> InitializingBean 
+    SpringApplicationAdminMXBeanRegistrar ..|> DisposableBean
+
+    class ApplicationContextAware {
+        <<interface>> extends 
+    }
+    ApplicationContextAware ..|> Aware
+
+    class Aware {
+        <<interface>>
+    }
+
+    class GenericApplicationListener {
+        <<interface>>
+    }
+    GenericApplicationListener ..|> SmartApplicationListener
+
+    class SmartApplicationListener {
+        <<interface>>
+    }
+    SmartApplicationListener ..|> ApplicationListenerTApplicationEvent
+    SmartApplicationListener ..|> Ordered
+
+    class ApplicationListenerTApplicationEvent["ApplicationListener&lt;ApplicationEvent&gt;"] {
+        <<interface>> 
+    }
+    ApplicationListenerTApplicationEvent ..|> EventListener
+    ApplicationListenerTApplicationEvent ..> ApplicationEvent
+
+    class Ordered {
+        <<interface>>
+    }
+
+    class ApplicationEvent {
+        <<abstract>>
+    }
+    ApplicationEvent --|> EventObject
+
+    class EnvironmentAware {
+        <<interface>>
+    }
+    EnvironmentAware ..|> Aware
+
+    class InitializingBean {
+        <<interface>>
+    }
+
+    class DisposableBean {
+        <<interface>>
+    }
+
+    class EventListener {
+        <<interface>>
+    }
+
+    class EventObject {
+        implements
+    }
+    EventObject ..|> Serializable
+
+    class Serializable {
+        <<interface>>
+    }
