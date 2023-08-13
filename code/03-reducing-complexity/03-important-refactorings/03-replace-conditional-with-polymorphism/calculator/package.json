@@ -1,0 +1,15 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Simple CLI calculator",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
+  },
+  "author": "M. Scott Ford <scott@corgibytes.com>",
+  "license": "CC-BY-SA-2.0",
+  "devDependencies": {
+    "jest": "^29.6.2"
+  }
+}
